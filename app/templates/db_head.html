@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cloud Storage</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+    <body class="goto-here" style="background:url({% static 'images/1.jpg' %}) repeat-y;background-size:100%;">
+    <style>
+    .card-header
+  {
+  background:#82ae46 !important;
+  }
+  .sidebar
+  {
+  height:900px !important;
+  }
+  .btn.btn-primary
+  {
+ background: #007bff !important;
+  }
+  .title-left h3,label{
+  color:#FFF !important;}
+  </style>
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" style="    background: #007bff !important;">
+	    <div class="container">
+	      <a class="navbar-brand" href="{% url 'user_login' %}" style="color:#FFF;">Secure Cloud Storage</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	         
+	         <li class="nav-item "><a href="/admin/" class="nav-link" style="color:#FFF;">Cloud</a></li>
+			  <li class="nav-item "><a href="{% url 'aditor_login' %}" class="nav-link" style="color:#FFF;">Aditor Login</a></li>
+			   <li class="nav-item "><a href="{% url 'register' %}" class="nav-link" style="color:#FFF;">Register</a></li>
+			    <li class="nav-item "><a href="{% url 'user_login' %}" class="nav-link" style="color:#FFF;">Cloud User Login</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->

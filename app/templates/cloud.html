@@ -1,0 +1,33 @@
+  {% include 'db_head.html' %}
+       <div class="container" style="width:60%;padding-bottom:100px;">
+                    <div class="checkout-address" style="padding-top:80px;">
+                        <div class="title-left">
+                            <h3>CLOUD LOGIN</h3>
+                        </div>
+						{% if messages %}
+                {% for i in messages %}
+                    <div class="alert alert-danger">{{i}}</div>
+                {% endfor %}
+            {% endif %}
+                        <form method="post" action="{% url 'cloud_login' %}"> {% csrf_token %}
+                            
+							 <div class="row">
+                            <div class="col-md-12">
+                                <label for="username">Username *</label>
+                                <div class="input-group">
+                                    <input type="text" name="username" class="form-control" id="username" placeholder="" required>
+                                    <div class="invalid-feedback" style="width: 100%;"> Your username is required. </div>
+                                </div>
+                            </div>
+							<div class="col-md-12">
+                                    <label for="state">Password *</label>
+                                    <input type="password" class="form-control" id="password" placeholder="" required name="password">
+                                    <div class="invalid-feedback"> Please provide a valid password. </div>
+                                </div>
+							</div>
+                            
+                            
+                        <input type="submit" class="btn btn-primary py-3 px-5" value="LOGIN" style="margin:20px 0;"></form>
+                    </div>  </div>
+  {% include 'footer.html' %}
+     

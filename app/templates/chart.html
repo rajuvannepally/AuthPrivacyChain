@@ -1,0 +1,79 @@
+{%include 'header.html'%}
+{% load static %}
+{% load mathfilters %}
+
+ <link rel="stylesheet" href="{% static 'assets/vendor/charts/chartist-bundle/chartist.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/charts/c3charts/c3.css' %}">
+        <div class="main-panel">
+          <div class="content-wrapper pb-0">
+            <div class="page-header flex-wrap">
+              <h3 class="mb-0">Overall Chart 
+              </h3>
+             <div class="card-body">
+        <div id="c3chart_pie"></div>
+        
+    </div>
+            </div>
+           
+        </div>
+     <script src="{% static 'assets/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'assets/vendor/slimscroll/jquery.slimscroll.js' %}"></script>
+    <script src="{% static 'assets/vendor/charts/charts-bundle/Chart.bundle.js' %}"></script>
+     <script src="{% static 'assets/vendor/charts/charts-bundle/chartjs.js' %}"></script>
+      <script src="{% static 'assets/vendor/charts/chartist-bundle/chartist.min.js' %}"></script>
+     <script src="{% static 'assets/vendor/charts/chartist-bundle/Chartistjs.js' %}"></script>
+     <script src="{% static 'assets/vendor/charts/c3charts/c3.min.js' %}"></script>
+     <script src="{% static 'assets/vendor/charts/c3charts/d3-5.4.0.min.js' %}"></script>
+     <script src="{% static 'assets/vendor/charts/c3charts/C3chartjs.js' %}"></script>
+     <script src="{% static 'assets/vendor/charts/morris-bundle/raphael.min.js' %}"></script>
+     <script src="{% static 'assets/vendor/charts/morris-bundle/morris.js' %}"></script>
+     <script src="{% static 'assets/vendor/charts/morris-bundle/Morrisjs.js' %}"></script>
+<script type="text/javascript">
+  arr2 = [0];
+  arr3 = [100];
+  arr = ['TOTAL USER','UPLODED FILES'];
+  $.noConflict();
+    jQuery(document).ready(function(){
+        jQuery.ajax({
+        
+        url:'{% url "chart_ajax" %}',
+        success: function (data) {
+          user = data['row'][0][0];
+		  files = data['row1'][0][0];
+		  pending= data['row2'][0][0];
+		  users= data['row3'][0][0];
+		    if (jQuery('#c3chart_pie').length) {
+            var chart = c3.generate({
+                bindto: "#c3chart_pie",
+                data: {
+                    columns: [
+                        ['ACTIVE USER', user],
+                        ['UPLODED FILES', files],
+						['INACTIVE USERS', users],
+						['PENDING FILES', pending]
+                    ],
+                    type: 'pie',
+
+                    colors: {
+                         data1: '#5969ff',
+                        data2: '#ff407b',
+						 data3: '#ff3ca6',
+						  data4: '##6a008a'
+
+
+                    }
+                },
+                pie: {
+                    label: {
+                        format: function(value, ratio, id) {
+                            return value;
+                        }
+                    }
+                }
+            });
+        }
+
+              }
+            }); });
+</script>

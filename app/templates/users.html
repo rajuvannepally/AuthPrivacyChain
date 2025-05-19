@@ -1,0 +1,38 @@
+{%include 'header.html'%}
+<div class="container" style="margin:0 auto;padding-top:100px;">
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" >
+    <div class="card" >
+        <h5 class="card-header">Cloud USer Details</h5>
+        <div class="card-body">
+            <div class="table-responsive ">
+                <table class="table table-bordered">
+                    <thead style="background:blue;color: #FFF">
+                        <tr class="white">
+                            <th scope="col" >S.No</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+							<th scope="col">Mobile</th>
+							<th scope="col">Address</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        {% for i in b %}
+                        <tr style="background:#FFF;color: #000">
+                            <th scope="row">{{forloop.counter}}</th>
+                            <td>{{i.username}}</td>
+                            <td>{{i.email}}</td>
+                            <td>{{i.mobile}}</td>
+							<td >{{i.address}}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="8" class="text-center bg-primary">No Users</td>
+                        </tr>
+                       {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

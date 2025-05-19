@@ -1,0 +1,88 @@
+{%include 'header.html'%}
+{% load static %}
+{% load mathfilters %} %}
+        <div class="main-panel">
+          <div class="content-wrapper pb-0">
+            <div class="page-header flex-wrap">
+              <h3 class="mb-0"> Hi, welcome back! 
+              </h3>
+              <div class="row">
+                  <div class="col-xl-6 col-md-6 stretch-card grid-margin grid-margin-sm-0 pb-sm-3">
+                    <div class="card bg-warning">
+                      <div class="card-body px-3 py-4">
+                        <div class="d-flex justify-content-between align-items-start">
+                          <div class="color-card">
+                            <p class="mb-0 color-card-head">Total Users</p>
+                            <h2 class="text-white"><i class="mdi mdi-account-multiple"></i> {{user.id__count}}
+                            </h2>
+                          </div>
+                          <i class="card-icon-indicator mdi mdi-basket bg-inverse-icon-warning"></i>
+                        </div>
+                       
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-md-6 stretch-card grid-margin grid-margin-sm-0 pb-sm-3">
+                    <div class="card bg-success">
+                      <div class="card-body px-3 py-4">
+                        <div class="d-flex justify-content-between align-items-start">
+                          <div class="color-card">
+                            <p class="mb-0 color-card-head">Total Active Users</p>
+                            <h2 class="text-white"> <i class="mdi mdi-account-check"></i> {{a.id__count}}
+                            </h2>
+                          </div>
+                          <i class="card-icon-indicator mdi mdi-cube-outline bg-inverse-icon-success"></i>
+                        </div>
+                       
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-md-6 stretch-card grid-margin grid-margin-sm-0 pb-sm-3 pb-lg-0 pb-xl-3">
+                    <div class="card bg-danger">
+                      <div class="card-body px-3 py-4">
+                        <div class="d-flex justify-content-between align-items-start">
+                          <div class="color-card">
+                            <p class="mb-0 color-card-head">Total Dective Users</p>
+                            <h2 class="text-white"><i class="mdi mdi-account-minus"></i> {{b.id__count}}
+                            </h2>
+                          </div>
+                          <i class="card-icon-indicator mdi mdi-briefcase-outline bg-inverse-icon-primary"></i>
+                        </div>
+                      
+                      </div>
+                    </div>
+                  </div>
+				    <div class="col-xl-6 col-md-6 stretch-card grid-margin grid-margin-sm-0 pb-sm-3 pb-lg-0 pb-xl-3">
+                    <div class="card bg-info" style="background-color:green !important;">
+                      <div class="card-body px-3 py-4">
+                        <div class="d-flex justify-content-between align-items-start">
+                          <div class="color-card">
+                            <p class="mb-0 color-card-head">Total Uploaded Files</p>
+                            <h2 class="text-white"><i class="mdi mdi-upload"></i> {{f.id__count}}
+                            </h2>
+                          </div>
+                          <i class="card-icon-indicator mdi mdi-briefcase-outline bg-inverse-icon-primary"></i>
+                        </div>
+                      
+                      </div>
+                    </div>
+                  </div>
+				    <div class="col-xl-6d col-md-6 stretch-card grid-margin grid-margin-sm-0 pb-sm-3 pb-lg-0 pb-xl-3">
+                    <div class="card bg-primary">
+                      <div class="card-body px-3 py-4">
+                        <div class="d-flex justify-content-between align-items-start">
+                          <div class="color-card">
+                            <p class="mb-0 color-card-head">Total Pending Files</p>
+                            <h2 class="text-white"><i class="mdi mdi-file-excel"></i> {{e.id__count}}
+                            </h2>
+                          </div>
+                          <i class="card-icon-indicator mdi mdi-briefcase-outline bg-inverse-icon-primary"></i>
+                        </div>
+                      
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          
+        </div>

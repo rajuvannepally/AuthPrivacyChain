@@ -1,0 +1,44 @@
+{%include 'header.html'%}
+<div class="container" style="margin:0 auto;padding-top:100px;">
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" >
+    <div class="card" >
+        <h5 class="card-header">Cloud FILES</h5>
+        <div class="card-body">
+            <div class="table-responsive ">
+                <table class="table table-bordered">
+                    <thead style="background:blue;color: #FFF">
+                        <tr class="white">
+                            <th scope="col" >S.No</th>
+							<th scope="col">Username</th>
+							<th scope="col">Email</th>
+                            <th scope="col">File Name</th>
+                            <th scope="col">Notes</th>
+							<th scope="col">Uploaded Date</th>
+							<th scope="col">Download</th>
+							<th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        {% for i in b %}
+                        <tr style="background:#FFF;color: #000">
+                            <th scope="row">{{forloop.counter}}</th>
+							<td>{{i.user_id}}</td>
+							<td>{{i.user_id.email}}</td>
+                            <td>{{i.name}}</td>
+                            <td>{{i.notes}}</td>
+                            <td>{{i.upoaded_date}}</td>
+							<td><a href="/media/enc_{{i.file}}" class="btn btn-success" target="_blank"><i class="mdi mdi-arrow-down-bold-circle"></i></a></td>
+							<td ><span class="badge badge-danger">{{i.status}}</span></td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="8" class="text-center bg-success">No FILES</td>
+                        </tr>
+                       {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

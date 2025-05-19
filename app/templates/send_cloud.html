@@ -1,0 +1,42 @@
+{%include 'header.html'%}
+<div class="container" style="margin:0 auto;padding-top:100px;">
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" >
+    <div class="card" >
+        <h5 class="card-header">Files Waiting for Aditor to Send Cloud</h5>
+        <div class="card-body">
+            <div class="table-responsive ">
+                <table class="table table-bordered">
+                    <thead style="background:blue;color: #FFF">
+                        <tr class="white">
+                            <th scope="col" >S.No</th>
+							<th scope="col">Username</th>
+							<th scope="col">Email</th>
+                            <th scope="col">File Name</th>
+                            <th scope="col">Notes</th>
+							<th scope="col">Uploaded Date</th>
+							<th scope="col">Option</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        {% for i in b %}
+                        <tr style="background:#FFF;color: #000">
+                            <th scope="row">{{forloop.counter}}</th>
+							<td>{{i.user_id}}</td>
+							<td>{{i.user_id.email}}</td>
+                            <td>{{i.name}}</td>
+                            <td>{{i.notes}}</td>
+                            <td>{{i.upoaded_date}}</td>
+							<td ><a href="{% url 'upload' pk=i.id %}?email={{i.user_id.email}}" class="badge badge-danger">Upload to Cloud</a></td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="8" class="text-center bg-primary">No FILES</td>
+                        </tr>
+                       {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
